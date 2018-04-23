@@ -20,6 +20,14 @@ export default class Weather extends Component {
 		}).catch((error) => {
 			console.log("Weather Data Failed To Load.");
 		});
+
+		axios.get('/forecast/Maumee,us').then((response) => {
+			console.log("Forecast Data: ", response);
+
+			//this.setState({weatherData: response.data})
+		}).catch((error) => {
+			console.log("Weather Data Failed To Load.");
+		});
 	}
 
 	render() {
@@ -31,7 +39,7 @@ export default class Weather extends Component {
 					weatherData ? (
 						<div>
 						<div>
-						Current Temp: {((9/5) * (weatherData.main.temp - 273) + 32).toFixed(0)}
+						Current Temp: {(weatherData.main.temp).toFixed(0)} °F
 						</div>
 						<div>City: {weatherData.name}</div>
 						</div>

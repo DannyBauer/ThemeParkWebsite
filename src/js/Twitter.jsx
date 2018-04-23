@@ -18,7 +18,7 @@ export default class Twitter extends Component {
 
 	componentDidMount() {
 		axios.get('/tweets').then((response) => {
-			console.log("Twitter Data here: ", response.data);
+			//console.log("Twitter Data here: ", response.data);
 			this.setState({tweetData: response.data})
 		}).catch((error) => {
 			console.log("Tweet Data Failed To Load.");
@@ -36,13 +36,15 @@ export default class Twitter extends Component {
 
 		return (
 			<div className="tweet-panel">
-				<h1>Twitter Stuff</h1>
+				<h3>Tweets about</h3>
+				<div className="hello-world twitter"> Hello World! </div>
         {
           statuses ? statuses.map((val, idx) => {
             return (
               <div key={uuid()}>
-                <h4>Tweet:</h4>
-                <div>{val.text}</div>
+                <div className="tweet username">@{val.user.screen_name}</div>
+                <div className="tweet">{val.text}</div>
+								<br />
               </div>
             )
           }) : ''

@@ -43,15 +43,26 @@ app.get('/', (req, res) => { /* Serve our html from the production server */
 
 app.get('/weather/:city', (req, res) => {
     const city = req.params.city;
-    axios.get("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=5bd22b268b6fa7845de84a3ff6faece4")
+    axios.get("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=5bd22b268b6fa7845de84a3ff6faece4")
         .then((response) => {
           res.send(response.data);
         }).catch((error) => {
           console.log("Error: ", error);
           res.status(404);
         });
-
 });
+
+app.get('/forecast/:city', (req, res) => {
+  const city = req.params.city;
+  axios.get("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&APPID=5bd22b268b6fa7845de84a3ff6faece4")
+      .then((response) => {
+        res.send(response.data);
+      }).catch((error) => {
+        console.log("Error: ", error);
+        res.status(404);
+      });
+});
+
 
 app.get('/tweets', (req, res) => {
     twitterRequest.get('search/tweets', {q:'Ledgards Theme Park'})

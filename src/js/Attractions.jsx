@@ -11,8 +11,11 @@ import {
 	MenuItem,
 	Grid,
 	Row,
-	Col
+	Col,
+	Carousel,
+	Image
 } from 'react-bootstrap'
+import rollercoaster from "../images/rollercoaster.jpg"
 
 export default class Attractions extends Component {
 	constructor(props) {
@@ -26,7 +29,7 @@ export default class Attractions extends Component {
 
 	componentDidMount() {
 		axios.get('/rollercoasters').then((response) => {
-			console.log("Roller Coasters here boi: ", response.data);
+			//console.log("Roller Coasters here boi: ", response.data);
 
 			this.setState({attractionData: response.data})
 		}).catch((error) => {
@@ -45,16 +48,15 @@ export default class Attractions extends Component {
               <div key={uuid()}>
               <Grid>
 								<Row>
-									<Col xs={12} md={4} className="attraction-panel">
-                  <h4>Attraction:</h4>
+									<Col xs={12} md={6} className="attraction-panel">
+                  <div>Attraction:</div>
                   <div>Name: {val.name}</div>
                   <div>Height Requirement: {val.heightMin}</div>
                   <div>Top Speed: {val.topSpeed}</div>
                   <div>Track Length: {val.trackLength}</div>
 									</Col>
-									<Col xs={12} md={4}>
-									</Col>
-									<Col xs={12} md={4}>
+									<Col xs={12} md={6}>
+									<img height={300} src={rollercoaster} />
 									</Col>
 								</Row>
 							</Grid>

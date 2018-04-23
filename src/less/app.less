@@ -3,7 +3,7 @@ body {
   // background: url('../images/tower.gif');
   // background-repeat: no-repeat;
   // background-size: cover;
-  background-color: black;
+  //background-color: white;
   // background-attachment: fixed;
 }
 
@@ -14,60 +14,99 @@ body {
 .attraction {
   color: white;
 }
+.hello-world {
+  color: rgb(43, 179, 31);
+  font-family: 'Consolas';
+  font-size: 80pt;
+  font-weight: 800;
+  -webkit-text-stroke: 3px black;
+}
+.hello-world.twitter {
+  font-size: 25pt;
+  -webkit-text-stroke: 1px black;
+}
 
 .navbar {
-  background-color: black;
+  background-color: rgb(28, 27, 27);
   border-radius: 0px;
-  height: 100px;
+  //height: 100px;
   border: none;
 }
-
-.navbar.center .navbar-inner {
-    text-align: center;
-}
-
-.navbar.center .navbar-inner .nav {
-    display:inline-block;
-    float: none;
-    vertical-align: top;
+@media (max-width: 775px) {
+.navbar {
+    background-color: rgb(28, 27, 27);
+    border-radius: 0px;
+    //height: 100px;
+    border: none;
+  }
 }
 
 .navbar-item {
   color: white;
-  font-weight: 400;
-  font-size: 18pt;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-}
-.navbar-item-active {
-  color: rgb(115, 131, 236);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 22pt;
   font-family: 'Helvetica', 'Arial', sans-serif;
+  -webkit-text-stroke: 1px black;
+
+}
+.navbar-item-active {
+  color: rgb(43, 179, 31);
+  font-weight: 600;
+  font-size: 22pt;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  -webkit-text-stroke: 1px black;
 }
 
 .weather-panel {
   color: white;
-
+  font-size: 20pt;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  -webkit-text-stroke: 1px black;
+  font-weight: 600;
+  background-color: rgba(50, 41, 41, 0.7);
+  border-radius: 30px solid rgb(0, 0, 0);
 }
 .ticket-panel{
-  margin-left: 400px;
   color: white;
-  font-size: 50px;
+  font-size: 20pt;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  -webkit-text-stroke: 1px black;
+  font-weight: 600;
+  background-color: rgba(50, 41, 41, 0.7);
+  border-radius: 30px solid rgb(0, 0, 0);
+}
+.purchase-button {
+  font-size: 22pt;
+  -webkit-text-stroke: 0px black;
 }
 .tweet-panel {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  border: 1px solid #AAA;
+  width: 250px;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 15px;
-  background-color: #CCC;
+  background-color: rgb(0, 132, 255);
+}
+.tweet {
+  color: white;
+  font-family: 'font-family: arial,sans-serif;';
+  font-size: 15pt;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.tweet.username {
+  color:black;
+  font-size: 12pt;
 }
 .attraction-panel {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #AAA;
-  border-radius: 15px;
-  background-color: #CCC;
+  color: white;
+  font-size: 20pt;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  -webkit-text-stroke: 1px black;
+  font-weight: 600;
+  background-color: rgba(50, 41, 41, 0.7);
+  border-radius: 30px solid rgb(0, 0, 0);
+}
+.logo {
+  height: 150px;
 }
 
 .carousel { z-index: -99; } /* keeps this behind all content */
@@ -83,7 +122,8 @@ width: 100%; height: 100%;
 transition: opacity 5s ease;
 }
 .carousel .one {
-background: url('../images/thunderbolt.gif');
+background: url('../images/theme-park-background.jpg');
+background-color: black;
 background-size: cover;
 -moz-background-size: cover;
 }
@@ -93,7 +133,7 @@ background-size: cover;
 -moz-background-size: cover;
 }
 .carousel .three {
-background: url('../images/tower.gif');
+background: url('../images/thunderbolt.gif');
 background-size: cover;
 -moz-background-size: cover;
 }
