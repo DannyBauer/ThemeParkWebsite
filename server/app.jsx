@@ -93,9 +93,16 @@ app.get('/rollercoasters', (req, res) => {
     })();
 });
 
+app.use(express.static('public'))
+
 
 app.get('/hello', (req, res) => {
 	res.send("Hello World (from api)!");
+});
+
+app.get('/images/:image', (req, res) => { /* Serve our html from the production server */
+    const image = req.params.image;
+    res.sendFile(path.resolve('server/public/' + image));
 });
 
 app.listen(7777,() => { console.log("Started listening on port", 7777); });
