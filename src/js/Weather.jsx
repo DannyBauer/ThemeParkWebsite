@@ -39,7 +39,7 @@ export default class Weather extends Component {
 					weatherData ? (
 						<div>
 						<div>
-						Current Temp: {(weatherData.main.temp).toFixed(0)} °F
+						Current Temperature: {(weatherData.main.temp).toFixed(0)} °F
 						</div>
 						<div>City: {weatherData.name}</div>
 						</div>
