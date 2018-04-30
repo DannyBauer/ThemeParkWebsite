@@ -24,20 +24,23 @@ const Navigation = (props) => {
 	return (
 		<Navbar fixedTop fluid className="navbar">
 				<Nav pullLeft>
-				<NavItem onClick={ (e) => { homeHandler(e); } }>
+				<NavItem style={{marginTop: 7}} onClick={ (e) => { homeHandler(e); } }>
 				<span className={activePage == 'home' ? "navbar-item-active" : "navbar-item"}>
 					Home
 				</span>
 				</NavItem>
-					<NavItem onClick={ (e) => { attractionsHandler(e); } }>
+					<NavItem style={{marginTop: 7}} onClick={ (e) => { attractionsHandler(e); } }>
 					<span className={activePage == 'attractions' ? "navbar-item-active" : "navbar-item"}>
 						Attractions
 					</span>
 					</NavItem>
-					<NavItem onClick={ (e) => { ticketsHandler(e); } }>
+					<NavItem style={{marginTop: 7}} onClick={ (e) => { ticketsHandler(e); } }>
 					<span className={activePage == 'tickets' ? "navbar-item-active" : "navbar-item"}>
 						Tickets
 					</span>
+					</NavItem>
+					<NavItem>
+						<Weather />
 					</NavItem>
 				</Nav>
 		</Navbar>
@@ -89,17 +92,15 @@ class App extends Component {
 			/>
 				<div className="moveBody">
 				{
-					activePage == 'attractions' ? <div><br /><br /><Attractions /></div> : ''
+					activePage == 'attractions' ? <div className="body-spacing"><Attractions /></div> : ''
 				}
 				{
-					activePage == 'tickets' ? <div><br /><br /><Tickets /></div> : ''
+					activePage == 'tickets' ? <div className="body-spacing"><Tickets /></div> : ''
 				}
 
 				{
 					activePage == 'home' ?
-						<div>
-							<br />
-							<br />
+						<div className="body-spacing">
 							<Grid>
 								<Row>
 									<Col xs={12} md={2}>
@@ -113,13 +114,10 @@ class App extends Component {
 								<br />
 								<br />
 								<Row>
-									<Col xs={12} md={4}>
-										<Twitter />
+									<Col xs={12} md={7}>
+									<Twitter />
 									</Col>
-									<Col xs={12} md={4}>
-									<Weather />
-									</Col>
-									<Col xs={12} md={4}>
+									<Col xs={12} md={5}>
 									<iframe width="400px" height="400px" src="//www.google.com/maps/embed/v1/directions?origin=Toledo,OH&destination=Cedar+Point&key=AIzaSyDyuPkQFj3habP_L8fTy_JECcFzS-qgEj0">
 								  </iframe>
 									</Col>

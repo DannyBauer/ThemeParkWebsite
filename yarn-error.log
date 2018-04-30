@@ -54,6 +54,7 @@ npm manifest:
       "react": "^16.3.1",
       "react-bootstrap": "^0.32.1",
       "react-dom": "^16.3.1",
+      "react-dropdown": "^1.4.2",
       "react-slick": "^0.23.1",
       "react-slideshow-image": "^0.2.2",
       "request": "^2.85.0",
@@ -1623,7 +1624,7 @@ Lockfile:
       isobject "^3.0.0"
       static-extend "^0.1.1"
   
-  classnames@^2.2.5:
+  classnames@^2.2.3, classnames@^2.2.5:
     version "2.2.5"
     resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
   
@@ -6309,6 +6310,12 @@ Lockfile:
       object-assign "^4.1.1"
       prop-types "^15.6.0"
   
+  react-dropdown@^1.4.2:
+    version "1.4.2"
+    resolved "https://registry.yarnpkg.com/react-dropdown/-/react-dropdown-1.4.2.tgz#da98118cba0263e99b531e00fa6d8595f1245432"
+    dependencies:
+      classnames "^2.2.3"
+  
   react-overlays@^0.8.0:
     version "0.8.3"
     resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.8.3.tgz#fad65eea5b24301cca192a169f5dddb0b20d3ac5"
@@ -8252,7 +8259,7 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 100
+  Exit code: 14
   Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c mongod.exe --dbpath data
   Directory: C:\Users\dbaue\Desktop\School\WWW\React\theme-park-website

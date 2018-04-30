@@ -39,6 +39,7 @@ export default class Attractions extends Component {
 			console.log("Attraction Data Failed To Load.");
 		});
 	}
+	
 
 	render() {
 		const attractions = this.state.attractionData;
@@ -60,11 +61,11 @@ export default class Attractions extends Component {
 								<Row>
 									<Col xs={12} md={6} className="attraction-panel">
                   <div style={{fontSize: 40}}>{val.name}</div>
-                  <div><img height={50} src={"/images/height-requirement.png"} /> {val.heightMin}</div>
+                  <div><img height={50} src={"/images/height-requirement.png"} /> {val.heightMin} (inches)</div>
 									<br />
-                  <div><img height={50} src={"/images/speed.png"} /> {val.topSpeed}</div>
+                  <div><img height={50} src={"/images/speed.png"} /> {val.topSpeed} (mph)</div>
 									<br />
-                  <div><img height={50} src={"/images/length.png"} /> {val.trackLength}</div>
+                  <div><img height={50} src={"/images/length.png"} /> {val.trackLength} (feet)</div>
 									<br />
 									</Col>
 									<Col xs={12} md={1}>

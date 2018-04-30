@@ -65,7 +65,7 @@ app.get('/forecast/:city', (req, res) => {
 
 
 app.get('/tweets', (req, res) => {
-    twitterRequest.get('search/tweets', {q:'Ledgards Theme Park'})
+    twitterRequest.get('search/tweets', {q:'Hello World Theme Park'})
                   .then(response => {
                     res.send(response.data);
                   })
